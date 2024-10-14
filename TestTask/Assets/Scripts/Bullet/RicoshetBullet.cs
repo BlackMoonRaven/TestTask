@@ -13,6 +13,7 @@ public class RicoshetBullet : Bullet
     protected override void OnHit()
     {
         Transform target = _enemies[Random.Range(0, 3)].transform;
-        transform.DOMove(new Vector3(target.position.x, 5, target.position.z), 1f);
+        transform.DOMove(new Vector3(target.position.x, 5, target.position.z), 1f).SetLink(gameObject);
+        
     }
 }
